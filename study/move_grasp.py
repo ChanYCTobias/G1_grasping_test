@@ -11,7 +11,7 @@ from PIL import Image, ImageDraw
 import grip_mass_study as study
 import physical_grasp as phys
 
-OUT = Path(__file__).resolve().parent
+OUT = Path(__file__).resolve().parents[1] / "video"
 # Hand motion, in joint radians, from the closed pose in the first two seconds.
 MOVES = {
     "up": {"left_shoulder_pitch_joint": -0.35, "right_shoulder_pitch_joint": -0.35},
@@ -253,6 +253,7 @@ def record(rows):
         print("[move] video", label, "frames", len(clip))
         frames.extend(stamp(image, label) for image in clip)
     path = OUT / "move_grasp.mp4"
+    OUT.mkdir(exist_ok=True)
     imageio.mimsave(path, frames, fps=fps)
     print(f"[move] wrote {path} ({len(frames)} frames)")
 
@@ -278,7 +279,7 @@ def main():
                     f"{'HOLD' if row['held'] else 'slip'} follow {row['follow_m']:.3f} m "
                     f"force {row['force_n']:.0f} N hand_dz {row['hand_dz']:+.3f} rod_dz {row['rod_dz']:+.3f}"
                 )
-    csv_path = OUT / "move_grasp_results.csv"
+    csv_path = Path(__file__).resolve().parent / "move_grasp_results.csv"
     fields = list(rows[0].keys())
     with csv_path.open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
@@ -303,7 +304,7 @@ def main():
                 f"{mass:.0f} kg {direction}: minimum grip {grip:.2f} Nm, contact force {cell['force_n']:.0f} N"
             )
     text = "\n".join(lines) + "\n"
-    report = OUT / "move_grasp_study.txt"
+    report = Path(__file__).resolve().parent / "move_grasp_study.txt"
     report.write_text(text)
     print(text)
     record(rows)

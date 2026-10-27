@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw
 
 import grip_mass_study as study
 
-OUT = Path(__file__).resolve().parent / "physical_grasp.mp4"
+OUT = Path(__file__).resolve().parents[1] / "video" / "physical_grasp.mp4"
 # Flatter than the saved -0.40 rad wrist, so the thumb meets the side of the post.
 WRIST_PITCH = -0.15
 # Thicker than the old 16 mm posts, so the fingers stall against them.
@@ -231,6 +231,7 @@ def record():
             )
             for image in hold_frames
         )
+    OUT.parent.mkdir(exist_ok=True)
     imageio.mimsave(OUT, frames, fps=fps)
     print(f"[phys] wrote {OUT} ({len(frames)} frames)")
 
