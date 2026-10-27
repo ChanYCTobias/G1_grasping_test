@@ -1,19 +1,22 @@
 Closed grasp from the first two seconds (22 mm rods, gravity off while the hands close).
-Then the hands move the rod. Grip is the finger torque cap. Force is the mean contact normal force.
-Held means the rod stays within 3 cm of the hand motion.
-1 kg up: minimum grip 0.40 Nm, contact force 238 N
-1 kg down: minimum grip 0.40 Nm, contact force 29 N
-1 kg left: minimum grip 0.40 Nm, contact force 51 N
-1 kg right: minimum grip 0.40 Nm, contact force 82 N
-2 kg up: minimum grip 0.40 Nm, contact force 238 N
-2 kg down: minimum grip 0.40 Nm, contact force 31 N
-2 kg left: minimum grip 0.40 Nm, contact force 53 N
-2 kg right: minimum grip 0.40 Nm, contact force 84 N
-4 kg up: minimum grip 0.40 Nm, contact force 232 N
-4 kg down: minimum grip 1.00 Nm, contact force 93 N
-4 kg left: minimum grip 0.40 Nm, contact force 63 N
-4 kg right: minimum grip 0.40 Nm, contact force 109 N
-5 kg up: minimum grip 0.40 Nm, contact force 250 N
-5 kg down: minimum grip 1.40 Nm, contact force 146 N
-5 kg left: minimum grip 0.40 Nm, contact force 82 N
-5 kg right: minimum grip 0.40 Nm, contact force 112 N
+The rod weld is off before any move. With friction removed, each weight drops, so the rods are not stuck.
+Then the hands move the rod up, down, left, and right. Grip is the finger torque cap.
+Contact force is the mean normal force on the rods during the move.
+Held means both the hands and the rods travel at least 5 cm the same way,
+and the rod stays within 4 cm of the hand along that direction.
+1 kg up: minimum grip 0.20 Nm, contact force 303 N
+1 kg down: minimum grip 0.20 Nm, contact force 15 N
+1 kg left: minimum grip 0.20 Nm, contact force 26 N
+1 kg right: minimum grip 0.20 Nm, contact force 35 N
+2 kg up: minimum grip 0.20 Nm, contact force 326 N
+2 kg down: minimum grip 0.20 Nm, contact force 30 N
+2 kg left: minimum grip 0.20 Nm, contact force 30 N
+2 kg right: minimum grip 0.20 Nm, contact force 34 N
+4 kg up: minimum grip 0.20 Nm, contact force 329 N
+4 kg down: minimum grip 1.00 Nm, contact force 84 N
+4 kg left: minimum grip 0.20 Nm, contact force 68 N
+4 kg right: minimum grip 0.20 Nm, contact force 61 N
+5 kg up: minimum grip 0.20 Nm, contact force 346 N
+5 kg down: minimum grip 1.40 Nm, contact force 125 N
+5 kg left: minimum grip 0.20 Nm, contact force 94 N
+5 kg right: minimum grip 0.20 Nm, contact force 68 N
